@@ -1,0 +1,208 @@
+/* A regra para o 'body' afeta a página inteira */
+body {
+    /* Define a família de fontes padrão para uma aparência limpa e moderna */
+    font-family: sans-serif;
+    /* Remove a margem padrão do navegador para que o conteúdo encoste nas bordas */
+    margin: 0;
+    /* Remove o espaçamento interno padrão */
+    padding: 0;
+    /* Define uma cor de fundo cinza bem clara para a página */
+    background-color: #f4f4f4;
+    /* Define a cor padrão do texto */
+    color: #333;
+    /* Ativa o modo flexbox para os filhos diretos do body (header, main, footer) */
+    display: flex;
+    /* A MUDANÇA MAIS IMPORTANTE: Organiza os itens em coluna, um abaixo do outro */
+    flex-direction: column;
+    /* Centraliza todo o conteúdo da página horizontalmente */
+    align-items: center;
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+header {
+    /* Faz o cabeçalho ocupar 100% da largura da tela */
+    width: 100%;
+    /* Cor de fundo escura para o cabeçalho */
+    background-color: #333;
+    /* Cor do texto dentro do cabeçalho */
+    color: white;
+    /* Adiciona um espaçamento interno (1rem em cima/baixo, 0 nas laterais) */
+    padding: 1rem 0;
+    /* Usa flexbox para alinhar o logo e a navegação */
+    display: flex;
+    /* Distribui o espaço ao redor dos itens (logo e nav) */
+    justify-content: space-around;
+    /* Alinha verticalmente o logo e a navegação ao centro */
+    align-items: center;
+    /* Faz o cabeçalho ficar fixo no topo da tela ao rolar a página */
+    position: sticky;
+    top: 0;
+}
+
+/* Estilo para o logo */
+.logo {
+    /* Aumenta o tamanho da fonte */
+    font-size: 1.5rem;
+    /* Deixa a fonte em negrito */
+    font-weight: bold;
+}
+
+/* Estilo para a lista de navegação (<ul>) */
+nav ul {
+    /* Remove os marcadores (bolinhas) da lista */
+    list-style: none;
+    /* Remove margens e espaçamentos que a lista possa ter por padrão */
+    margin: 0;
+    padding: 0;
+    /* Usa flexbox para alinhar os itens do menu (<li>) em linha */
+    display: flex;
+}
+
+/* Estilo para cada item da lista (<li>) */
+nav ul li {
+    /* Adiciona uma margem à esquerda de cada item para separá-los */
+    margin-left: 20px;
+}
+
+/* Estilo para os links (<a>) da navegação */
+nav ul li a {
+    /* Define a cor do texto do link */
+    color: white;
+    /* Remove o sublinhado padrão dos links */
+    text-decoration: none;
+    /* Define o tamanho da fonte */
+    font-size: 1rem;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+main {
+    /* Define que o conteúdo principal ocupará 90% da largura disponível */
+    width: 90%;
+    /* Define uma largura máxima para evitar que o conteúdo fique muito largo em telas grandes */
+    max-width: 960px;
+    /* Cor de fundo branca para a área de conteúdo, criando um contraste */
+    background-color: white;
+    /* Espaçamento interno para o conteúdo não ficar colado nas bordas */
+    padding: 2rem;
+    /* Margem para separar o main do header e do footer */
+    margin: 2rem 0;
+    /* Adiciona uma sombra suave para dar um efeito de elevação */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* Arredonda as bordas da caixa de conteúdo principal */
+    border-radius: 8px;
+}
+
+/* Estilo geral para todas as seções (<section>) */
+section {
+    /* Adiciona um espaçamento interno em cima e embaixo */
+    padding: 40px 0;
+    /* Adiciona uma linha cinza clara na parte inferior para separar as seções */
+    border-bottom: 1px solid #eee;
+}
+
+/* Remove a linha da última seção para um acabamento melhor */
+section:last-child {
+    border-bottom: none;
+}
+
+/* Estilo para os títulos principais */
+h1, h2 {
+    /* Centraliza o texto dos títulos */
+    text-align: center;
+    /* Adiciona uma margem inferior para separar o título do texto que vem depois */
+    margin-bottom: 1.5rem;
+}
+
+/* --- SEÇÃO DE SERVIÇOS (CARDS) --- */
+.cards {
+    /* Usa flexbox para alinhar os cards */
+    display: flex;
+    /* Distribui os cards com espaço igual entre eles */
+    justify-content: space-between;
+    /* Define um espaçamento (gap) de 20px entre os cards */
+    gap: 20px;
+    /* Permite que os cards "quebrem" para a linha de baixo se não couberem na tela */
+    flex-wrap: wrap;
+}
+
+/* Estilo individual de cada card */
+.card {
+    /* Cor de fundo para o card */
+    background-color: #f9f9f9;
+    /* Borda sutil */
+    border: 1px solid #ddd;
+    /* Espaçamento interno */
+    padding: 20px;
+    /* Bordas arredondadas */
+    border-radius: 5px;
+    /* Define que cada card deve tentar ocupar 30% da largura do contêiner '.cards' */
+    flex-basis: 30%;
+    /* Centraliza o texto dentro do card */
+    text-align: center;
+    /* Adiciona uma sombra leve para destacar o card */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- FORMULÁRIO DE CONTATO --- */
+form {
+    /* Usa flexbox para os campos do formulário */
+    display: flex;
+    /* Alinha os campos em coluna */
+    flex-direction: column;
+    /* Cria um espaçamento de 15px entre cada campo (input, textarea, button) */
+    gap: 15px;
+}
+
+/* Estilo para os campos de texto e a área de texto */
+input[type="text"],
+input[type="email"],
+textarea {
+    /* Espaçamento interno para o texto não ficar colado na borda */
+    padding: 10px;
+    /* Cor e espessura da borda */
+    border: 1px solid #ccc;
+    /* Bordas arredondadas */
+    border-radius: 4px;
+    /* Tamanho da fonte dentro dos campos */
+    font-size: 1rem;
+}
+
+/* Estilo para botões */
+button {
+    /* Espaçamento interno */
+    padding: 10px 15px;
+    /* Remove a borda padrão */
+    border: none;
+    /* Cor de fundo verde */
+    background-color: #5cb85c;
+    /* Cor do texto do botão */
+    color: white;
+    /* Tamanho da fonte */
+    font-size: 1rem;
+    /* Bordas arredondadas */
+    border-radius: 4px;
+    /* Muda o cursor para uma "mãozinha" para indicar que é clicável */
+    cursor: pointer;
+    /* Adiciona uma transição suave para a mudança de cor */
+    transition: background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre o botão (hover) */
+button:hover {
+    /* Escurece a cor de fundo para dar feedback visual ao usuário */
+    background-color: #4cae4c;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer {
+    /* Ocupa 100% da largura da tela */
+    width: 100%;
+    /* Centraliza o texto */
+    text-align: center;
+    /* Adiciona um espaçamento interno */
+    padding: 1rem 0;
+    /* Mesma cor de fundo do cabeçalho para criar consistência */
+    background-color: #333;
+    /* Cor do texto */
+    color: white;
+}
